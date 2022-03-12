@@ -1,0 +1,170 @@
+body{
+    line-height: 1;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+/* ###### Nav bar ###### */
+
+nav{
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+nav ul{
+    background-color: #eee;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+ul.topnav li{
+    list-style: none;
+    float: left;
+}
+
+ul.topnav li.topnav-right{
+    float: right; 
+}
+
+ul.topnav li a{
+    display: block;
+    text-decoration: none;
+    min-height: 16px;
+    text-align: center;
+    padding: 14px;
+    color: #666;
+}
+
+ul.topnav li a:hover{
+    background-color: #0080ff;
+    color: #fff;
+}
+ul.topnav li a:active{
+    background-color: #0080ff;
+    color: #fff;
+}
+/* ###### Body default ###### */
+
+.container{
+    width: 100%;
+    margin: auto; /*will place elements in center and even distribution of elements*/
+    padding-top: 15%;
+    padding-bottom: 15%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.row{
+    width: 100%;
+    display: flex; /*change size*/
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.row::after{
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.col-1{width: 8.33%;}
+.col-2{width: 16.66%;}
+.col-3{width: 25%;}
+.col-4{width: 33.33%;}
+.col-5{width: 41.66%;}
+.col-6{width: 50%;}
+.col-7{width: 58.33%;}
+.col-8{width: 66.66%;}
+.col-9{width: 75%;}
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width: 100%;}
+
+*{
+    box-sizing: border-box;
+}
+
+/* ###### Body Custom ###### */
+
+#section-1-gradient{
+    background: #076DFF;
+    background: -webkit-linear-gradient(#076DFF,#65a5ff);
+    background: -o-linear-gradient(#076DFF, #65a5ff);
+    background: -moz-linear-gradient(#076DFF, #65a5ff);
+    background: linear-gradient(#076DFF,#65a5ff);
+}
+
+p{
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+div.leftSide-col{
+    margin-left: 30%;
+}
+
+h2.large{
+    color: #fff;
+    font-size: 25px;
+    margin: auto;
+    text-align: center;
+    padding: 40px;
+}
+
+input[type="text"]{
+    font-size: 15px;
+    width: 350px;
+    min-width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+form h3{
+    color: white;
+}
+
+.button{
+    font-size: 15px;
+    font-weight:500;
+    color: #fff;
+    background-color: #0069ff;
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
+.button:hover{
+    color: #fff;
+    background-color: #0054ca;
+}
+
+/* ###### Mobile ###### */
+
+@media screen and (max-width: 680px){
+    .col-12{
+        width: 100%;
+        margin: 0;
+    }
+
+    div.leftSide-col, {
+        margin: 15px;
+    }
+
+    input[type="text"]{
+        width: 200px;
+    }
+
+    div.mobileStack{
+        width: 50%;
+        display: block;
+    }
+    .container{
+        padding-top: 60%;
+        padding-bottom: 70%;
+    }
+
+}
+
