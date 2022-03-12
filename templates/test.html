@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Test</title>
+    <meta name='viewport'
+        content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <link rel = "icon" href = "{% static 'images/aboutlogo.png' %}" type = "image/x-icon">
+</head>
+
+<body onload="load()">
+
+    <div class="instructions" id="inst" style="display: none;">
+        Instructions:<br />
+        bla bla...<p></p>
+        <input type="button" value="Start" onclick="fullscreen()">
+    </div>
+
+    <center>
+        <iframe style="display: none;" id="test" src="https://docs.google.com/forms/d/e/{{paperCode}}/viewform?embedded=true"
+            width="640" height="494" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </center>
+
+    <div id="goBack" style="display: none;">
+        Test ended...
+        <a href="/"><input type="button" value="Home"></a>
+    </div>
+
+    <script>
+        function getScreen() {
+            return document.fullscreenElement
+                || document.webkitFullscreenElement
+                || document.mozFullScreenElement
+                || document.msFullScreenElement
+        }
+        function load() {
+            var objects = document.getElementById("inst");
+            var form = document.getElementById("test");
+            var back = document.getElementById("goBack");
+            if ("{{code}}" == "1") {
+                back.style.display = ''
+            }
+            else {
+                objects.style.display = ''
+            }
+        }
+        function fullscreen() {
+            var objects = document.getElementById("inst");
+            var form = document.getElementById("test");
+            objects.remove();
+            form.style.display = '';
+            document.documentElement.requestFullscreen().catch((e) => {
+                console.log(e);
+            })
+        }
+        document.addEventListener("fullscreenchange", () => {
+            var back = document.getElementById("goBack");
+            if (getScreen() == null) {
+                var form = document.getElementById("test");
+                form.style.display = 'none';
+                back.style.display = ''
+                const http = new XMLHttpRequest;
+                const url = "/submitted/{{roll}}/{{code}}";
+                http.open("GET", url);
+                http.send();
+                http.onreadystatechange = (e) => {
+                    console.log(e)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

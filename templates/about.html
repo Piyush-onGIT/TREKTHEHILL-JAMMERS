@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="{% static 'aboutStyles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=200" />
+    <link rel = "icon" href = "{% static 'images/aboutlogo.png' %}" type = "image/x-icon">
+</head>
+
+<body id="bgcolor">
+    <nav>
+        <ul class="topnav">
+            <li><a href="/">EXAMPROCTOR</a></li>
+            <li class="topnav-right"><a href="about">About</a></li>
+            <li class="topnav-right"><a href="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>About This Project</h1>
+    </header>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-12">
+                <div class="box">
+                    <div class="icon">
+                        <img src="{% static 'images/aboutLogo.png' %}">
+                    </div>
+                    <label>EXAMPROCTOR</label>
+                    <p>There are a lot of cheating activities going on during online exams. Now, exams are not that serious for students after this lockdown. Especially when the exams are conducted in Google Form format. They open Google Form in one tab and google or their class notes pdf in another. So, the main motive of examination, which is to evaluate their performance and preparation goes into vain. <br>
+                        Taking this under consideration, We, a team of 4 students, have come up with a solution to this problem where teachers can conduct online exams, which will be organized in such a way that students cannot cheat. <br>
+                        Examproctor gives you the advantage to give and take the examination via Google Form in a fair mean.                        
+                        </p>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</body>
+</html>

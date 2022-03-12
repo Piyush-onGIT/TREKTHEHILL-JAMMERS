@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EXAMPROCTOR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link href="{% static 'index.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=200" />
+    <link rel = "icon" href = "{% static 'images/aboutlogo.png' %}" type = "image/x-icon">
+</head>
+
+<body>
+    <nav>
+        <ul class="topnav">
+            <li><a href="/">EXAMPROCTOR</a></li>
+            <li class="topnav-right"><a href="about">About</a></li>
+            <li class="topnav-right"><a href="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="bgcolor">
+
+        <div class="row">
+
+            <div class="col-12">
+                <div class="youare">You Are ?</div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="box1">
+                    <div class="icon">
+                        <img src="{% static 'images/studentlogo.png' %}">
+                    </div>
+                    <button><a href="student">Student</a></button>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="box2">
+                    <div class="icon">
+                        <img src="{% static 'images/teacherlogo.png' %}">
+                    </div>
+                    <button><a href="teacher">Teacher </a></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
