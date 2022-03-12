@@ -6,7 +6,7 @@ fair online exams in this period.
 languages used are following 
 1. Python 
 2. Html 5
-3. Css3
+3. Css 3
 4. Javascript
 
 
