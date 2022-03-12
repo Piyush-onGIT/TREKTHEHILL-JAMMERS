@@ -1,10 +1,10 @@
-from email import message
+# from email import message
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate, logout
-import csv
-from csv import writer
+from django.contrib.auth import login, authenticate
+# import csv
+# from csv import writer
 from datetime import date
 import sqlite3                   #importing sqlite database
 
