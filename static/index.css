@@ -92,6 +92,9 @@ ul.topnav li a:active{
     background: -o-linear-gradient(#076DFF, #65a5ff);
     background: -moz-linear-gradient(#076DFF, #65a5ff);
     background: linear-gradient(#076DFF,#65a5ff);
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 div.youare{
