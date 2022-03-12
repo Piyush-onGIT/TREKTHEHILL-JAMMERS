@@ -10,4 +10,3 @@ languages used are following
 4. Javascript
 
 
-# TREKTHEHILL-JAMMERS

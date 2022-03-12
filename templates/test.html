@@ -10,16 +10,34 @@
         content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link href="" rel="stylesheet">
+    <link href="{% static 'testStyles.css' %}" rel="stylesheet">
     <link rel = "icon" href = "{% static 'images/aboutlogo.png' %}" type = "image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=200" />
 </head>
 
 <body onload="load()">
+    <div class="container" id="section-1-gradient">
+        <div class="row">
+            <div class="col-12">
 
     <div class="instructions" id="inst" style="display: none;">
-        Instructions:<br />
-        bla bla...<p></p>
-        <input type="button" value="Start" onclick="fullscreen()">
+        <h2 class="large">
+        Instructions: <br><br>
+        <div class="inst">
+            1. Do not exit the full screen mode after the exam starts. <br><br>
+            2. Do not change the Tab after the exam starts. <br><br>
+            3. Do not turn off your phone/PC after the exam starts. <br><br>
+            4. In case you don't follow the above instructions, it will lead to your absence in the exam. <br><br>
+            <p></p></div>
+        <br><br><br>
+        <div class="but">
+        <input class="button" type="button" value="Start" onclick="fullscreen()">
+        </div>
+    </h2>
     </div>
 
     <center>
@@ -31,7 +49,9 @@
         Test ended...
         <a href="/"><input type="button" value="Home"></a>
     </div>
-
+</div>
+</div>
+</div>
     <script>
         function getScreen() {
             return document.fullscreenElement
