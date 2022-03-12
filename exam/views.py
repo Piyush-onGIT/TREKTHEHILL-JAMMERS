@@ -35,7 +35,7 @@ def contact(request):
 '''# ================== creating a student login function ======================
 
 def login_student(request):
-    if request.method == 'POST':                   # checking if the method is POST
+    if request.method == 'POST':                   
         user = request.POST.get('username')        # storing the value of username in username variable
         passw = request.POST.get('password')       # storing value of the password in the password variable
         
