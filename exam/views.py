@@ -6,7 +6,7 @@ from django.contrib.auth import login, authenticate, logout
 import csv
 from csv import writer
 from datetime import date
-import sqlite3
+import sqlite3                   #importing sqlite database
 
 # Create your views here.
 def index(request):
@@ -53,8 +53,8 @@ def login_student(request):
 # ==================== creating Teacher login function =========================
 def login_teacher(request):
     if request.method == 'POST':
-        user = request.POST.get('username')
-        passw = request.POST.get('password')
+        user = request.POST.get('username')        # Getting the username 
+        passw = request.POST.get('password')       # Geeting password 
 
         # ======== authentication ===========
 
@@ -64,14 +64,15 @@ def login_teacher(request):
             return render(request, "teacher.html")
         
         else:
-            messages.error(request, "Please check your username or password , contact admin if problem persists")
+            messages.error(request, "Please check your username or password , contact admin if problem persists")   # returning a message on invalid input
     
     else:
-        messages.error(request, "")
-    return render(request, "teacher_signin.html")
+        messages.error(request, "")           
+    return render(request, "teacher_signin.html")    # returning to login page if method is not post
 
+# ========================= function for making exam paper =====================
 
-def makePaper(request):
+def makePaper(request):                            
     data = request.GET
     subCode = data['code'].upper()
     sem = data['sem'].upper()
@@ -104,13 +105,15 @@ def makePaper(request):
 
     return render(request, 'teacher.html', {'code': paperCode})
 
+# ========================== making test function =============================== 
+
 def startTest(request):
     data = request.POST
     code = data['code']             # paper code
     roll = data['roll']             # roll number
     
-    conn = sqlite3.connect("submissions.sqlite3")
-    cur = conn.cursor()
+    conn = sqlite3.connect("submissions.sqlite3")      # Setting up sqlite connection 
+    cur = conn.cursor()                                # creating a cursor for sqlite
     cur.execute("SELECT * FROM submissions")
 
     rows = cur.fetchall()           # list of tuples
