@@ -38,16 +38,14 @@ ul.topnav li a{
     padding: 14px;
     color: #666;
 }
-
 ul.topnav li a:hover{
-    background-color: #0080ff;
+    background-color: #202020;
     color: #fff;
 }
 ul.topnav li a:active{
-    background-color: #0080ff;
+    background-color: #202020;
     color: #fff;
 }
-
 /* ###### Body default ###### */
 
 .container{
@@ -90,11 +88,11 @@ ul.topnav li a:active{
 /* ###### Body Custom ###### */
 
 #bgcolor{
-    background: #076DFF;
-    background: -webkit-linear-gradient(#076DFF,#65a5ff);
+    background: #201c1c;
+    /* background: -webkit-linear-gradient(#076DFF,#65a5ff);
     background: -o-linear-gradient(#076DFF, #65a5ff);
     background: -moz-linear-gradient(#076DFF, #65a5ff);
-    background: linear-gradient(#076DFF,#65a5ff);
+    background: linear-gradient(#076DFF,#65a5ff); */
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -106,6 +104,7 @@ h1{
     margin: 30px;
     line-height: 70px;
     text-align: center;
+    animation: slide 1s forwards;
 }
 
 
@@ -119,18 +118,21 @@ div.box{
     padding: 36px 24px 40px 24px;
     border-radius: 5px;
     color: #666;
+    animation: slide 1s forwards;
 }
 .box label{
     font-size: 27px;
     font-weight: 600;
     text-align: center;
     color: rgb(36, 36, 36);
+    animation: slide 1s forwards;
 }
 .subheading{
     font-size: 18px;
     font-weight:600;
     text-align: center;
     color: rgb(36, 36, 36);
+    animation: slide 1s forwards;
 }
 p{
     font-size: 16px;
@@ -138,6 +140,7 @@ p{
     font-family: 'Fredoka', sans-serif;
     text-align: left;
     color: #666;
+    animation: slide 1s forwards;
 }
 .links{
     text-decoration: none;
@@ -158,7 +161,18 @@ div.icon{
     border-radius: 5px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .20),
     0 2px 3px 0 rgba(0, 0, 0, .1);
+    animation: slide 1s forwards;
 }
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 /* ###### Mobile ###### */
 

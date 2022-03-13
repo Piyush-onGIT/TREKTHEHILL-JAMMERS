@@ -1,11 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
+ 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Teacher</title>
+    <title>Exam Proctor</title>
     <meta name='viewport'
         content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
     <meta name="description" content="">
@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="max-age=200" />
+    <link rel="stylesheet" href="../static/teacherStyles.css">
 </head>
 
 <body onload="check()">
@@ -30,37 +31,39 @@
         </ul>
     </nav>
 
-    <div class="container" id="section-1-gradient">
-        <div class="row">
-            <div class="col-12">
-                <div id="head">
-                    <h2 class="large">
-                        Just Give Me the Link of Google Form, I Will Conduct Your Exam Cheating-Free.
-                    </h2>
-                </div>
-                <p></p>
-                <form method="GET" id="paper" action="makePaper">
-                    {% csrf_token %}
-                    <div class="leftSide-col">
-                        <h3>Subject Code</h3>
-                        <input placeholder="Subject Code" name="code" type="text">
-                        <h3>Semester</h3>
-                        <input placeholder="Semester" name="sem" type="text">
-                        <h3>Section</h3>
-                        <input placeholder="Section" name="sec" type="text">
-                        <p></p>
-                        <h3>Paste the Link of Google Form</h3>
-                        <input class="textbox" type="text" name="link" placeholder="Paste here">
-                        <br><br><br>
-                        <input class="button" type="submit" value="Submit">
-                        <p></p>
-                        <div id="paperCode"></div>
-                        <div id="note"></div>
-                    </div>
-                </form>
-            </div>
-        </div>
+ <div class="container" id="section-1-gradient">
+   <div class="row">
+    <div class="col-12">
+    <div id="head">
+        <h2 class="large">
+        Just Give Me the Link of Google Form, I Will Conduct Your Exam Cheating-Free.
+       </h2>
     </div>
+    <p></p>
+    <form method="GET" id="paper" action="makePaper">
+        <div class="leftSide-col">
+        <!-- {% csrf_token %} -->
+        <h3>Subject Code</h3>
+        <input placeholder="Subject Code" name="code" type="text">
+        <h3>Semester</h3>
+        <input placeholder="Semester" name="sem" type="text">
+        <h3>Section</h3>
+        <input placeholder="Section" name="sec" type="text">
+        <p></p>
+        <h3>Paste the Link of Google Form</h3>
+        <input class="textbox" type="text" name="link" placeholder="Paste here">
+        <br><br><br>
+        <input class="button" type="submit" value="Submit">
+        <p></p>
+        <br><br>
+        <div id="paperCode"></div>
+        <div id="note"></div>
+        </div>
+    </form>
+     </div>
+   </div>
+ </div>
+ 
     <script>
         function check() {
             if ("{{code}}" == "3") {
@@ -70,10 +73,10 @@
         var elem = document.getElementById("paperCode");
         var note = document.getElementById("note");
         if ("{{code}}" != '' && "{{code}}" != '3') {
-            elem.innerHTML = "Please keep this paper code: {{code}} <br/> Give this to your students at the time of exam.";
-            note.innerHTML = "NOTE:You won't be able to see this code again. For more, contact admin";
+            elem.innerHTML = "Please Copy and Keep This Paper Code: {{code}} <br/> Give This to Your Students at the Time of Exam.";
+            note.innerHTML = "NOTE: You won't be Able to See This Code Again. For more, Contact Admin";
         }
     </script>
+</div>
 </body>
-
 </html>

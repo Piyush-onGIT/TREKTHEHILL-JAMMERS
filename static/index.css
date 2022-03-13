@@ -2,7 +2,7 @@ body{
     line-height: 1;
     margin: 0;
 }
-
+ 
 /* ###### Nav bar ###### */
 
 nav{
@@ -10,9 +10,9 @@ nav{
     width: 100%;
     margin: 0;
 }
-
+ 
 nav ul{
-    background-color: #eee;
+    background-color: rgb(228, 228, 228);
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -33,15 +33,16 @@ ul.topnav li a{
     min-height: 16px;
     text-align: center;
     padding: 14px;
-    color: #666;
+    color: black;
+    font-size: 20px;
 }
 
 ul.topnav li a:hover{
-    background-color: #0068cf;
+    background-color: #202020;
     color: #fff;
 }
 ul.topnav li a:active{
-    background-color: #0068cf;
+    background-color: #202020;
     color: #fff;
 }
 
@@ -78,7 +79,8 @@ ul.topnav li a:active{
 .col-9{width: 75%;}
 .col-10{width: 83.33%;}
 .col-11{width: 91.66%;}
-.col-12{width: 100%;}
+/* .col-12{width: 100%;} */
+/* .contain{width: 100%;} */
 
 *{
     box-sizing: border-box;
@@ -87,15 +89,18 @@ ul.topnav li a:active{
 /* ###### Body Custom ###### */
 
 #bgcolor{
-    background: #076DFF;
-    background: -webkit-linear-gradient(#076DFF,#65a5ff);
-    background: -o-linear-gradient(#076DFF, #65a5ff);
-    background: -moz-linear-gradient(#076DFF, #65a5ff);
-    background: linear-gradient(#076DFF,#65a5ff);
+    background: #202020;
+    /* background: -webkit-linear-gradient(#050a11,#e3eaf5);
+    background: -o-linear-gradient(#102542,#e3eaf5);
+    background: -moz-linear-gradient(#102542,#e3eaf5);
+    background: linear-gradient(#050a11,#e3eaf5); */
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
-div.youare{
-    font-size: 85px;
+.youare{
+    font-size: 50px;
     font-weight:500;
     font-family: 'Ubuntu', sans-serif;
     color: #fff;
@@ -103,16 +108,49 @@ div.youare{
     display: block;
     text-align: center;
     margin: 5px;
-    margin: auto;
+    /* margin: auto; */
 }
 
+.contain {
+    text-align: center;
+    margin: 5px;
+    margin: auto;
+    padding: 10px 30px;
+    display: inline-block;
+}
+
+.typed-out{
+    color: white;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    font-size: 2.6rem;
+    width: 0;
+    animation: typing 2s forwards,
+                blink 1s infinite;
+  }
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from { border-color: transparent }
+    to { border-color: orange; }
+  }
+
 button{
+    border: none;
     padding: 0px 0px;
-    border-radius: 5px;
+    border-radius: 20px;
+    font-family: monospace;
+    background-color: rgb(42, 148, 190);
+    border: 2px solid orange;
 }
 button a{
-    color: #5e5e5e;
-    font-size: 25px;
+    color: #fdfafa;
+    font-size: 20px;
     font-weight: 500;
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
@@ -121,7 +159,7 @@ button a{
 }
 
 button:hover{
-    background-color: #0080ff;
+    background-color: rgb(31, 117, 151);
 }
 
 button a:hover{
@@ -174,4 +212,3 @@ div.icon{
         font-size: 50px;
     }
 }
-

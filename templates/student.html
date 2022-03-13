@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Student Credential's</title>
+    <title>Exam Proctor</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	 <link rel = "icon" href = "{% static 'images/aboutlogo.png' %}" type = "image/x-icon">
+    <link rel="icon" href="{% static 'images/aboutlogo.png' %}" type="image/x-icon">
 
 
     <style>
@@ -27,7 +27,7 @@
             align-items: center;
             padding-top: 40px;
             padding-bottom: 40px;
-            background-color: #f5f5f5;
+            background-color: #201c1c;
         }
 
         .main {
@@ -35,6 +35,9 @@
             max-width: 330px;
             padding: 15px;
             margin: auto;
+            border: 3.5px solid salmon;
+            border-radius: 10px;
+            background-color: #f5f5f5;
         }
 
         .main .checkbox {
@@ -91,7 +94,7 @@
 
 </head>
 
-<body onload="check()" class="text-center" font-family: 'Ubuntu', sans-serif;>
+<body onload="check()" class="text-center" font-family: 'Ubuntu' , sans-serif;>
 
     <!-- <nav>
         <ul class="topnav">
@@ -101,23 +104,36 @@
         </ul>
     </nav>
     <hr> -->
-    
     <form class="main" method="post" action="/startTest">
         {% csrf_token %}
         <img class="mb-4" src="{% static 'images/studentlogo.png' %}" alt="" width="150" height="150">
         <h1 class="h3 mb-3 font-weight-normal"><b>Please Fill Credentials</b></h1>
         <label for="inputRollNO" class="sr-only"></label>
-        <input type="Roll No." id="inputRollNO" name="roll" class="form-control" placeholder="Roll No." required
+        <input type="number" id="inputRollNO" name="roll" class="form-control" placeholder="Roll No." required
             autofocus>
         <label for="inputcode" class="sr-only"> Paper Code</label>
         <input type="code" id="inputcode" name="code" class="form-control" placeholder="Code" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Next</button>
-        
+        <!-- <br/>
+        <a href="logout"><input type="submit" class="btn btn-lg btn-primary btn-block" value="Logout Sessions"></a> -->
+
     </form>
-	<script>
+    <script>
         function check() {
-            if ("{{code}}" == "3") {
+            if ("{{code}}" == "4") {
+                alert("Already logged out");
+            }
+            if ("{{code}}" == "5") {
+                alert("Logged out successfully");
+            }
+            else if ("{{code}}" == "3") {
                 alert("Invalid paper code, Please contact your teacher.")
+            }
+            else if ("{{code}}" == "2") {
+                alert("Multiple sessions detected. If you have started this test on any other device then finish it from that device only");
+            }
+            else {
+                alert("You can't change your device after this step. If you want to switch, then please do it now.")
             }
         }
     </script>

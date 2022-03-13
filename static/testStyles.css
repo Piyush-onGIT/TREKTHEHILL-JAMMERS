@@ -2,6 +2,7 @@ body{
     line-height: 1;
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
+    /* background-color: #201c1c; */
 }
 /* ###### Nav bar ###### */
 
@@ -35,24 +36,16 @@ ul.topnav li a{
     padding: 14px;
     color: #666;
 }
-
 ul.topnav li a:hover{
-    background-color: #0080ff;
+    background-color: #202020;
     color: #fff;
 }
 ul.topnav li a:active{
-    background-color: #0080ff;
+    background-color: #202020;
     color: #fff;
 }
-/* ###### Body default ###### */
 
-.container{
-    width: 100%;
-    margin: auto; /*will place elements in center and even distribution of elements*/
-    padding-top: 5%;
-    padding-bottom: 10%;
-    font-family: 'Ubuntu', sans-serif;
-}
+/* ###### Body default ###### */
 
 .row{
     width: 100%;
@@ -87,28 +80,23 @@ ul.topnav li a:active{
 /* ###### Body Custom ###### */
 
 #section-1-gradient{
-    background: #076DFF;
-    background: -webkit-linear-gradient(#076DFF,#65a5ff);
+    background: #201c1c;
+    /* background: -webkit-linear-gradient(#076DFF,#65a5ff);
     background: -o-linear-gradient(#076DFF, #65a5ff);
     background: -moz-linear-gradient(#076DFF, #65a5ff);
-    background: linear-gradient(#076DFF,#65a5ff);
-}
-
-p{
-    font-size: 15px;
-    line-height: 1.2;
-}
-
-div.leftSide-col{
-    margin-left: 30%;
+    background: linear-gradient(#076DFF,#65a5ff); */
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 h2.large{
     color: #fff;
-    font-size: 25px;
+    font-size: 30px;
     margin: auto;
     text-align: center;
-    padding: 40px;
+    padding-top: 7%;
+    animation: slide 1s forwards;
 }
 div.inst{
     color: #fff;
@@ -117,22 +105,35 @@ div.inst{
     margin: auto;
     text-align: center;
     padding: 40px;
+    animation: slide 1s forwards;
+}
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+div.inst2{
+    color: #fff;
+    font-size: 20px;
+    font-weight: lighter;
+    margin: auto;
+    text-align: center;
+    animation: slide 1s forwards;
+}
+div.inst3{
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+    margin: auto;
+    text-align: center;
+    animation: slide 1s forwards;
 }
 div.but{
     text-align: center;
-}
-
-input[type="text"]{
-    font-size: 15px;
-    width: 350px;
-    min-width: 100px;
-    padding: 5px;
-    border-radius: 5px;
-    border-style: none;
-}
-
-form h3{
-    color: white;
 }
 
 .button{
@@ -146,10 +147,44 @@ form h3{
     display: block;
     text-align: center;
     margin: auto;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: monospace;
+    background-color: rgb(42, 148, 190);
+    border: 2px solid orange;
 }
 .button:hover{
     color: #fff;
-    background-color: #0054ca;
+    background-color: rgb(31, 117, 151);;
+}
+#goBack{
+    margin: 0;
+    background: #202020;
+    /* background: -webkit-linear-gradient(#076DFF,#65a5ff);
+    background: -o-linear-gradient(#076DFF, #65a5ff);
+    background: -moz-linear-gradient(#076DFF, #65a5ff);
+    background: linear-gradient(#076DFF,#65a5ff); */
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%; 
+    font-family: 'Ubuntu', sans-serif; 
+}
+p.para{
+    padding-top: 15%;
+    font-size: 30px;
+}
+a.underline{
+    text-decoration: none;
+}
+#test{
+    background: #202020;
+    /* background: -webkit-linear-gradient(#076DFF,#65a5ff);
+    background: -o-linear-gradient(#076DFF, #65a5ff);
+    background: -moz-linear-gradient(#076DFF, #65a5ff);
+    background: linear-gradient(#076DFF,#65a5ff); */
 }
 
 /* ###### Mobile ###### */
@@ -158,10 +193,6 @@ form h3{
     .col-12{
         width: 100%;
         margin: 0;
-    }
-
-    div.leftSide-col, {
-        margin: 15px;
     }
 
     input[type="text"]{
@@ -174,11 +205,11 @@ form h3{
     }
     h2.large{
         font-size: 20px;
+        padding: 5px;
+        padding-top: 20%;
     }
-    .container{
-        padding-top: 50%;
-        padding-bottom: 60%;
+    div.inst{
+        padding: 5px;
     }
 
 }
-

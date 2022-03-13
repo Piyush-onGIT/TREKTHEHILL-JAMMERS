@@ -2,6 +2,7 @@ body{
     line-height: 1;
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
+    color: white;
 }
 /* ###### Nav bar ###### */
 
@@ -37,22 +38,22 @@ ul.topnav li a{
 }
 
 ul.topnav li a:hover{
-    background-color: #0080ff;
+    background-color: #202020;
     color: #fff;
 }
 ul.topnav li a:active{
-    background-color: #0080ff;
+    background-color: #202020;
     color: #fff;
 }
 /* ###### Body default ###### */
 
-.container{
+/* .container{
     width: 100%;
-    margin: auto; /*will place elements in center and even distribution of elements*/
+    margin: auto
     padding-top: 3%;
     padding-bottom: 3%;
     font-family: 'Ubuntu', sans-serif;
-}
+} */
 
 .row{
     width: 100%;
@@ -87,20 +88,20 @@ ul.topnav li a:active{
 /* ###### Body Custom ###### */
 
 #section-1-gradient{
-    background: #076DFF;
-    background: -webkit-linear-gradient(#076DFF,#65a5ff);
+    background: #202020;
+    /* background: -webkit-linear-gradient(#076DFF,#65a5ff);
     background: -o-linear-gradient(#076DFF, #65a5ff);
     background: -moz-linear-gradient(#076DFF, #65a5ff);
-    background: linear-gradient(#076DFF,#65a5ff);
+    background: linear-gradient(#076DFF,#65a5ff);*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 p{
     font-size: 15px;
     line-height: 1.2;
-}
-
-div.leftSide-col{
-    margin-left: 30%;
+    animation: slide 1s forwards;
 }
 
 h2.large{
@@ -109,6 +110,7 @@ h2.large{
     margin: auto;
     text-align: center;
     padding: 40px;
+    animation: slide 1s forwards;
 }
 
 input[type="text"]{
@@ -118,12 +120,20 @@ input[type="text"]{
     padding: 5px;
     border-radius: 5px;
     border-style: none;
+    animation: slide 1s forwards;
 }
 
 form h3{
     color: white;
+    animation: slide 1s forwards;
 }
+.leftSide-col{
+    margin: auto;
+    padding-left: 35%;
+    padding-right: 35%;
+    animation: slide 1s forwards;
 
+}
 .button{
     font-size: 15px;
     font-weight:500;
@@ -134,11 +144,25 @@ form h3{
     padding: 10px 20px;
     display: block;
     text-align: center;
-    margin: 10px;
+    margin: auto;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: monospace;
+    background-color: rgb(42, 148, 190);
+    border: 2px solid orange;
 }
 .button:hover{
     color: #fff;
-    background-color: #0054ca;
+    background-color: rgb(31, 117, 151);;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* ###### Mobile ###### */
@@ -168,10 +192,10 @@ form h3{
         padding-top: 20%;
         padding-bottom: 40%;
     }
+    .leftSide-col{
+        margin: auto;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
 
-}
-
-#paperCode, #note {
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
 }

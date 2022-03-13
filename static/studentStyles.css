@@ -33,7 +33,8 @@ ul.topnav li a{
     min-height: 16px;
     text-align: center;
     padding: 14px;
-    color: #666;
+    color: black;
+    font-size: 20px;
 }
 
 ul.topnav li a:hover{
