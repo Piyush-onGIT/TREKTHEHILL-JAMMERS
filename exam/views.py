@@ -1,12 +1,12 @@
-from email import message
+# from email import message
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate, logout
-import csv
-from csv import writer
+from django.contrib.auth import login, authenticate
+# import csv
+# from csv import writer
 from datetime import date
-import sqlite3
+import sqlite3                   #importing sqlite database
 
 # Create your views here.
 
@@ -44,7 +44,7 @@ def contact(request):
 '''# ================== creating a student login function ======================
 
 def login_student(request):
-    if request.method == 'POST':                   # checking if the method is POST
+    if request.method == 'POST':                   
         user = request.POST.get('username')        # storing the value of username in username variable
         passw = request.POST.get('password')       # storing value of the password in the password variable
         
@@ -62,8 +62,8 @@ def login_student(request):
 # ==================== creating Teacher login function =========================
 def login_teacher(request):
     if request.method == 'POST':
-        user = request.POST.get('username')
-        passw = request.POST.get('password')
+        user = request.POST.get('username')        # Getting the username 
+        passw = request.POST.get('password')       # Geeting password 
 
         # ======== authentication ===========
 
@@ -73,15 +73,21 @@ def login_teacher(request):
             return render(request, "teacher.html")
 
         else:
+<<<<<<< HEAD
             messages.error(
                 request, "Please check your username or password , contact admin if problem persists")
 
+=======
+            messages.error(request, "Please check your username or password , contact admin if problem persists")   # returning a message on invalid input
+    
+>>>>>>> e07b8678bba6d4f436904cb9238816fbcc7c365b
     else:
-        messages.error(request, "")
-    return render(request, "teacher_signin.html")
+        messages.error(request, "")           
+    return render(request, "teacher_signin.html")    # returning to login page if method is not post
 
+# ========================= function for making exam paper =====================
 
-def makePaper(request):
+def makePaper(request):                            
     data = request.GET
     subCode = data['code'].upper()
     sem = data['sem'].upper()
@@ -115,6 +121,7 @@ def makePaper(request):
 
     return render(request, 'teacher.html', {'code': paperCode})
 
+<<<<<<< HEAD
 
 # def logout(request):
 #     data = request.POST
@@ -144,14 +151,23 @@ def makePaper(request):
 
 #     return render(request, 'student.html', {'code': 4})
 
+=======
+# ========================== making test function =============================== 
+>>>>>>> e07b8678bba6d4f436904cb9238816fbcc7c365b
 
 def startTest(request):
     data = request.POST
     code = data['code']             # paper code
     roll = data['roll']             # roll number
+<<<<<<< HEAD
 
     conn = sqlite3.connect("submissions.sqlite3")
     cur = conn.cursor()
+=======
+    
+    conn = sqlite3.connect("submissions.sqlite3")      # Setting up sqlite connection 
+    cur = conn.cursor()                                # creating a cursor for sqlite
+>>>>>>> e07b8678bba6d4f436904cb9238816fbcc7c365b
     cur.execute("SELECT * FROM submissions")
 
     rows = cur.fetchall()           # list of tuples
