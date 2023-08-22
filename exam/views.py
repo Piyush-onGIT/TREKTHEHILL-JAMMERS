@@ -73,14 +73,8 @@ def login_teacher(request):
             return render(request, "teacher.html")
 
         else:
-<<<<<<< HEAD
-            messages.error(
-                request, "Please check your username or password , contact admin if problem persists")
-
-=======
             messages.error(request, "Please check your username or password , contact admin if problem persists")   # returning a message on invalid input
     
->>>>>>> e07b8678bba6d4f436904cb9238816fbcc7c365b
     else:
         messages.error(request, "")           
     return render(request, "teacher_signin.html")    # returning to login page if method is not post
@@ -121,53 +115,43 @@ def makePaper(request):
 
     return render(request, 'teacher.html', {'code': paperCode})
 
-<<<<<<< HEAD
 
-# def logout(request):
-#     data = request.POST
-#     print(data)
-#     roll = data['roll']
-#     code = data['code']
+def logout(request):
+    data = request.POST
+    print(data)
+    roll = data['roll']
+    code = data['code']
 
-#     # check for any session
-#     conn0 = sqlite3.connect("sessions.sqlite3")
-#     cur0 = conn0.cursor()
-#     cur0.execute("SELECT * FROM sessions")
+    # check for any session
+    conn0 = sqlite3.connect("sessions.sqlite3")
+    cur0 = conn0.cursor()
+    cur0.execute("SELECT * FROM sessions")
 
-#     sessions = cur0.fetchall()       # list of tuples
-#     for i in sessions:
-#         if str(i[1]) == roll:
-#             if str(i[2]) == code:
-#                 if str(i[3]) == "0":
-#                     # already logged out
-#                     return render(request, 'student.html', {'code': 4})
-#                 else:
-#                     query = """UPDATE sessions set online = 0 where roll = ? and code = ?"""
-#                     cur0.execute(query, (roll, code))
-#                     conn0.commit()
-#                     cur0.close()
-#                     # logged out successfully
-#                     return render(request, 'student.html', {'code': 5})
+    sessions = cur0.fetchall()       # list of tuples
+    for i in sessions:
+        if str(i[1]) == roll:
+            if str(i[2]) == code:
+                if str(i[3]) == "0":
+                    # already logged out
+                    return render(request, 'student.html', {'code': 4})
+                else:
+                    query = """UPDATE sessions set online = 0 where roll = ? and code = ?"""
+                    cur0.execute(query, (roll, code))
+                    conn0.commit()
+                    cur0.close()
+                    # logged out successfully
+                    return render(request, 'student.html', {'code': 5})
 
-#     return render(request, 'student.html', {'code': 4})
+    return render(request, 'student.html', {'code': 4})
 
-=======
-# ========================== making test function =============================== 
->>>>>>> e07b8678bba6d4f436904cb9238816fbcc7c365b
 
 def startTest(request):
     data = request.POST
     code = data['code']             # paper code
     roll = data['roll']             # roll number
-<<<<<<< HEAD
-
-    conn = sqlite3.connect("submissions.sqlite3")
-    cur = conn.cursor()
-=======
     
     conn = sqlite3.connect("submissions.sqlite3")      # Setting up sqlite connection 
     cur = conn.cursor()                                # creating a cursor for sqlite
->>>>>>> e07b8678bba6d4f436904cb9238816fbcc7c365b
     cur.execute("SELECT * FROM submissions")
 
     rows = cur.fetchall()           # list of tuples
